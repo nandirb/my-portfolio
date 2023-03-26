@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@main/*": ["./src/*"]
+      "@main/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"],
     }
   }
 }
