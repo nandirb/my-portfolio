@@ -29,17 +29,17 @@ const Header = ()=>{
   return <header className={headerClasses}>
     <h1 className='font-large'>Welcome to <b>Nandir</b>'s <Emoji symbol={'🌸'} />  corner ... </h1>
     <div className='flex flex-row'>
-    <NavItem emoji={"✨"}>Blogs</NavItem>
-    <NavItem emoji={"✨"}>Projects</NavItem>
-    <NavItem emoji={"✨"}>About me</NavItem>
+    <NavItem emoji={"✨"} to='blogs'>Blogs</NavItem>
+    <NavItem emoji={"✨"} to='projects'>Projects</NavItem>
+    <NavItem emoji={"✨"} to='aboutme'>About me</NavItem>
     </div>
     </header>
 }
 
 const borderBox = 'px-5 h-12 border-gray-800 m-1 border-2 rounded-lg border-b-4 flex items-center active:border-b-2 highlight focus:outline-none focus:bg-gray-300'
 
-const NavItem = ({emoji, children})=>{
-  return <Link className={borderBox} href='./'>
+const NavItem = ({emoji, children, to})=>{
+  return <Link className={borderBox} href={`./${to}`}>
      <Emoji symbol={emoji} size={25} />
     {children}</Link>
 }
@@ -47,7 +47,7 @@ const NavItem = ({emoji, children})=>{
 const iconClasses = 'text-xl m-2 text-white p-1'
 
 const Footer =()=>(
-  <footer className="flex flex-center h-20 text-center absolute bottom-0 w-screen bg-slate-400 justify-center items-center">
+  <footer className="flex flex-center h-20 text-center absolute bottom-0 w-screen bg-gray-800 justify-center items-center">
     <Link href="https://github.com/nandirb" className={iconClasses}>
       <FiGithub />
     </Link>
