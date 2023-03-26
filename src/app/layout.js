@@ -2,6 +2,7 @@ import './globals.css'
 import { Patrick_Hand } from 'next/font/google'
 import {Emoji} from '@components/Emoji'
 import Link from 'next/link'
+import {FiGithub, FiLinkedin, FiInstagram, FiFacebook} from 'react-icons/fi'
 
 const font = Patrick_Hand({
   weight: '400',
@@ -19,7 +20,7 @@ export default function MainLayout({ children }) {
       <div className={wrapperClasses}>
       <Header />
       <main className={mainClasses}>{children}</main>
-      <footer className='bg-red-500'>Footer</footer>
+      <Footer />
       </div>
     </div>
 }
@@ -42,3 +43,22 @@ const NavItem = ({emoji, children})=>{
      <Emoji symbol={emoji} size={25} />
     {children}</Link>
 }
+
+const iconClasses = 'text-xl m-2 text-white p-1'
+
+const Footer =()=>(
+  <footer className="flex flex-center h-20 text-center absolute bottom-0 w-screen bg-slate-400 justify-center items-center">
+    <Link href="https://github.com/nandirb" className={iconClasses}>
+      <FiGithub />
+    </Link>
+    <Link href="https://www.linkedin.com/in/nandirb/" className={iconClasses}>
+      <FiLinkedin />
+    </Link>
+    <Link href="https://www.instagram.com/nandirb/" className={iconClasses}>
+      <FiInstagram />
+    </Link>
+    <Link href="https://www.facebook.com/nandir.be/" className={iconClasses}>
+      <FiFacebook />
+    </Link>
+</footer>
+)
