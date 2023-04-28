@@ -1,11 +1,9 @@
 "use client"
 
-import Main  from "./projects/page"
-
 export default function Home() {
   return (
     <main className="p-10">
-     <Main />
+     <h1>Home</h1>
     </main>
   )
 }
